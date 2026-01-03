@@ -1,0 +1,33 @@
+public class Palindrome {
+
+    // Function to check if the string is palindrome
+    public static boolean isPalindrome(String str) {
+        // Convert the string to lowercase to make the check case-insensitive
+        str = str.toLowerCase();
+        
+        // Initialize pointers at the start and end of the string
+        int start = 0;
+        int end = str.length() - 1;
+        
+        // Compare characters from both ends
+        while (start < end) {
+            if (str.charAt(start) != str.charAt(end)) {
+                return false; // If characters don't match, it's not a palindrome
+            }
+            start++;
+            end--;
+        }
+        
+        // If the loop completes, it's a palindrome
+        return true;
+    }
+
+    public static void main(String[] args) {
+        // Test cases
+        String test1 = "madam";
+        String test2 = "hello";
+        
+        System.out.println(test1 + " is palindrome? " + isPalindrome(test1)); // Should return true
+        System.out.println(test2 + " is palindrome? " + isPalindrome(test2)); // Should return false
+    }
+}
