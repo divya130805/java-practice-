@@ -1,0 +1,5 @@
+def count_digits(number):
+    return len(str(abs(number)))
+
+num = 12345
+print(count_digits(num))
