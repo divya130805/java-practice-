@@ -1,10 +1,26 @@
-def is_prime(number):
-    if number <= 1:
-        return False
-    for i in range(2, int(number ** 0.5) + 1):
-        if number % i == 0:
-            return False
-    return True
+public class PrimeCheck {
 
-num = 29
-print(is_prime(num))
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false; // 0 and 1 are not prime numbers
+        }
+        
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false; // If divisible by any number other than 1 and itself
+            }
+        }
+        
+        return true; // The number is prime
+    }
+
+    public static void main(String[] args) {
+        int num = 29;
+        if (isPrime(num)) {
+            System.out.println(num + " is a prime number.");
+        } else {
+            System.out.println(num + " is not a prime number.");
+        }
+    }
+}
+)
